@@ -69,7 +69,7 @@ resource "aws_iam_instance_profile" "profile" {
 resource "aws_instance" "coldcoffee" {
   ami           = "ami-0ded8326293d3201b"
   instance_type = "t2.micro"
-  key_name = "linux"
+  key_name = "fdec"
 iam_instance_profile = aws_iam_instance_profile.profile.name
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   user_data = <<EOF
