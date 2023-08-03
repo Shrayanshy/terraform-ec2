@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region = "ap-northeast-3"
 }
 
 data "aws_caller_identity" "current" {}
@@ -17,7 +17,7 @@ output "account_id" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "demopolicy"
+  name        = "demopolicy123"
   description = "My test policy"
 
   policy = <<EOT
@@ -37,7 +37,7 @@ EOT
 }
 
 resource "aws_iam_role" "role" {
-  name = "demorole"
+  name = "demorole12"
 
   assume_role_policy = <<EOF
 {
@@ -62,12 +62,12 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 }
 
 resource "aws_iam_instance_profile" "profile" {
-  name = "demoprofile12345"
+  name = "demoprofile12345678"
   role = aws_iam_role.role.name
 }
 
 resource "aws_instance" "coldcoffee" {
-  ami           = "ami-0ded8326293d3201b"
+  ami           = "ami-0df896ee24c051d42"
   instance_type = "t2.micro"
   key_name = "fdec"
 iam_instance_profile = aws_iam_instance_profile.profile.name
@@ -87,12 +87,12 @@ EOF
 
 
   tags = {
-    Name = "demotomcat"
+    Name = "demotomcat12"
   }
 }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "demoallow_tls"
+  name        = "demoallow_tls123"
   description = "Allow TLS inbound traffic"
 
   ingress {
@@ -111,6 +111,6 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "mySG"
+    Name = "mySG123"
   }
 }
