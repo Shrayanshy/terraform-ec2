@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('git checkout') {
+            steps {
+                sh 'rm -rf *'
+                sh ' git clone https://github.com/Pritam-Khergade/FDEC-B2.git'
+            }
+        }
+        stage(' change directory') {
+            steps {
+                sh''' cd  FDEC-B2/terraform/
+                ls -al
+                terraform init 
+                terraform plan 
+                terraform apply --auto-approve
+                '''
+            }
+        }
+    }
+}
