@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('git checkout') {
+        stage('git checkout onlinebookstore') {
             steps {
                 sh 'rm -rf *'
                 git 'https://github.com/Pritam-Khergade/onlinebookstore.git'
