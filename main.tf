@@ -67,7 +67,7 @@ resource "aws_iam_instance_profile" "profile" {
 }
 
 resource "aws_instance" "coldcoffee" {
-  ami           = "ami-0f34c5ae932e6f0e4"
+  ami           = "ami-0ded8326293d3201b"
   instance_type = "t2.micro"
   key_name = "linux"
 iam_instance_profile = aws_iam_instance_profile.profile.name
