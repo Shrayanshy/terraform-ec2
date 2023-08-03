@@ -17,7 +17,7 @@ pipeline {
         stage('aws s3 copy') {
             steps {
                 sh''' aws s3 ls 
-                aws s3 cp ./target/onlinebookstore.war s3://fdecb2-artifact/onlinebookstore ${BUILD_NUMBER}.war
+                aws s3 cp ./target/onlinebookstore.war s3://selmonbhoi-ki-bucket/onlinebookstore${BUILD_NUMBER}.war
                 '''
             }
         }
