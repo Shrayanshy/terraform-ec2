@@ -17,7 +17,7 @@ output "account_id" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "demopolicy123"
+  name        = "demopolicy12354"
   description = "My test policy"
 
   policy = <<EOT
@@ -37,7 +37,7 @@ EOT
 }
 
 resource "aws_iam_role" "role" {
-  name = "demorole12"
+  name = "demorole12ka4"
 
   assume_role_policy = <<EOF
 {
@@ -62,7 +62,7 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 }
 
 resource "aws_iam_instance_profile" "profile" {
-  name = "demoprofile12345678"
+  name = "demoprofile1234567888"
   role = aws_iam_role.role.name
 }
 
@@ -87,12 +87,12 @@ EOF
 
 
   tags = {
-    Name = "demotomcat12"
+    Name = "demotomcat1245"
   }
 }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "demoallow_tls123"
+  name        = "demoallow_tls12345"
   description = "Allow TLS inbound traffic"
 
   ingress {
@@ -111,6 +111,6 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "mySG123"
+    Name = "mySG12345"
   }
 }
