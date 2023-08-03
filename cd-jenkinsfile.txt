@@ -4,12 +4,12 @@ pipeline {
         stage('git checkout') {
             steps {
                 sh 'rm -rf *'
-                sh ' git clone https://github.com/Pritam-Khergade/FDEC-B2.git'
+                sh ' git clone https://github.com/Shrayanshy/terraform-ec2.git'
             }
         }
         stage(' change directory') {
             steps {
-                sh''' cd  FDEC-B2/terraform/
+                sh'''
                 ls -al
                 terraform init 
                 terraform plan 
