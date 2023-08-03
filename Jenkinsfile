@@ -29,7 +29,7 @@ pipeline {
         }
         stage('change directory') {
             steps {
-                sh'''
+                sh''' cd terraform-ec2
                 ls -al
                 terraform init 
                 terraform plan 
